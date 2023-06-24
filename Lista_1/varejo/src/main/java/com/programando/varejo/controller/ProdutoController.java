@@ -1,10 +1,7 @@
 package com.programando.varejo.controller;
 
 import com.programando.varejo.model.Produto;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,14 +24,23 @@ public class ProdutoController {
     }
 
     @GetMapping("/{codigoDeBarras}")
-    public Produto getAll(@PathVariable int codidoDeBarras){
+    public Produto getByCodigoDeBarras(@PathVariable int codigoDeBarras){
         for (Produto produto : produtos){
-            if (produto.getCodigoDeBarras() == codidoDeBarras){
+            if (produto.getCodigoDeBarras() == codigoDeBarras){
                 return produto;
             }
         }
         return null;
     }
 
-    
+    @PostMapping
+    public String save(@RequestBody Produto produto) {
+        for (Produto products : produtos) {
+            if (products.getCodigoDeBarras() == produto.getCodigoDeBarras()) {
+                return "O produto já existe no estoque!";
+            }
+        }
+        this.produtos.add(produto);
+        return "O produto " + produto.getNome() + " foi adicionado ao estoque!";
+    }
 }
