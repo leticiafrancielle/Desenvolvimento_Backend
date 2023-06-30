@@ -13,9 +13,9 @@ public class ProdutoController {
     private List<Produto> produtos = new ArrayList<>();
 
     public ProdutoController(){
-        produtos.add(new Produto(1234567, "Arroz", 15));
-        produtos.add(new Produto(6789321, "Feijão", 15));
-        produtos.add(new Produto(9876543, "Macarrão", 15));
+        produtos.add(new Produto(1234567, "Arroz integral", 15));
+        produtos.add(new Produto(6789321, "Barra de proteina", 5));
+        produtos.add(new Produto(9876543, "Pão integral", 25));
     }
 
     @GetMapping
