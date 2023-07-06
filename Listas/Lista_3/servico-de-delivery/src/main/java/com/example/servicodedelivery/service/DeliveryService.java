@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class DeliveryService {
 
     @Autowired
-    @Qualifier("envioviadrone")
+    @Qualifier("envioViaMoto")
     private FormaDeEnvio formaDeEnvio;
 
     public String enviar(Produto produto){
