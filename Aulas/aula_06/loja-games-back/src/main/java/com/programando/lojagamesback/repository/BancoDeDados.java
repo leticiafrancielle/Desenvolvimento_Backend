@@ -2,8 +2,6 @@ package com.programando.lojagamesback.repository;
 
 import com.programando.lojagamesback.model.Jogo;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-
 import java.util.ArrayList;
 import java.util.List;
 
