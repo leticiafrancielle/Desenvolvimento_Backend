@@ -1,0 +1,17 @@
+<div class="container d-flex justify-content-center">
+  <div class="row" *ngFor="let jogo of jogos">
+
+    <!--card-->
+
+    <div class="card ml-5 mr-5" style="width: 18rem;">
+      <img class="card-img-top" src="{{jogo.imagem}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{jogo.nome}}</h5>
+        <p class="card-text">{{jogo.descricao}}</p>
+          <span class="badge badge-pill badge-success p-2 mr-5">{{jogo.preco}}</span>
+        <a href="#" class="btn btn-primary">Comprar</a>
+      </div>
+    </div>
+
+  </div>
+</div>
