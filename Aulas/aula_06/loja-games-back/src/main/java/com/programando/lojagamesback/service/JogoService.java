@@ -14,8 +14,12 @@ public class JogoService {
     @Autowired
     private BancoDeDados bancoDeDados;
 
-    public List<Jogo> getAll(){
+    public List<Jogo> getAll() {
         return bancoDeDados.findAll();
+    }
+
+    public Jogo save(Jogo jogo) {
+        return bancoDeDados.save(jogo);
     }
 
 }
