@@ -1,0 +1,15 @@
+<form class="form">
+    <input type="number" name="primeiro-campo" id="id"
+    [(ngModel)]="cosmetico.id" placeholder="Id do cosmetico">
+
+    <input type="text" name="segundo-campo" id="imagem"
+    [(ngModel)]="cosmetico.imagem" placeholder="Imagem do cosmetico">
+
+    <input type="text" name="terceiro-campo" id="nome"
+    [(ngModel)]="cosmetico.nome" placeholder="Nome do cosmetico">
+
+    <input type="number" name="quinto-campo" id="preco"
+    [(ngModel)]="cosmetico.preco" placeholder="Preco do cosmetico">
+
+    <button class="btn btn-primary" (click)="saveCosmetico()">Enviar</button>
+</form>
