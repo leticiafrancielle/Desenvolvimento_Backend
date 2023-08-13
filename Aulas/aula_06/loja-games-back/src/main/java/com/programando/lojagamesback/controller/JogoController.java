@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/jogos")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("*")
 public class JogoController {
 
     @Autowired

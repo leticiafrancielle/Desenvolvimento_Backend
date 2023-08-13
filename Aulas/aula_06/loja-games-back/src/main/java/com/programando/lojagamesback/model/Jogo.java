@@ -1,26 +1,27 @@
 package com.programando.lojagamesback.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.sun.istack.NotNull;
+import org.hibernate.annotations.NotFound;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Jogo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotNull
     private String nome;
     private String descricao;
+    @NotNull
     private double preco;
     private String imagem;
     @JsonProperty("esta_favoritado")
     private boolean estaFavoritado;
-
-    public Jogo() { }
-
-    public Jogo(int id, String nome, String descricao, double preco, String imagem, boolean estaFavoritado) {
-        this.id = id;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.preco = preco;
-        this.imagem = imagem;
-        this.estaFavoritado = estaFavoritado;
-    }
 
     public int getId() {
         return id;
