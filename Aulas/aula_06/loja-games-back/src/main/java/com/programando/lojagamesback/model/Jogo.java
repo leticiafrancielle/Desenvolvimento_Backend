@@ -1,13 +1,12 @@
 package com.programando.lojagamesback.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sun.istack.NotNull;
-import org.hibernate.annotations.NotFound;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Jogo {
@@ -19,6 +18,7 @@ public class Jogo {
     private String descricao;
     @NotNull
     private double preco;
+    @NotNull
     private String imagem;
     @JsonProperty("esta_favoritado")
     private boolean estaFavoritado;
