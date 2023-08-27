@@ -18,4 +18,8 @@ export class JogoService {
   public postJogo(jogo: Jogo): Observable<Jogo>{
     return this.httpClient.post<Jogo>(this.rota, jogo)
   }
+
+  public favoritarJogo(id: number): Observable<Jogo>{
+    return this.httpClient.put<Jogo>(this.rota + "/favoritar/" + id, null)
+  }
 }

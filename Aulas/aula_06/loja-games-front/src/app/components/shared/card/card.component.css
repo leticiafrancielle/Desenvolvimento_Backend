@@ -1,0 +1,14 @@
+.favoritar {
+    font-size: 19px;
+    color: gray;
+    cursor: pointer;
+}
+
+.favoritar:hover {
+    color: red;
+}
+
+.estaFavoritado {
+    color: red;
+    cursor: pointer;
+}

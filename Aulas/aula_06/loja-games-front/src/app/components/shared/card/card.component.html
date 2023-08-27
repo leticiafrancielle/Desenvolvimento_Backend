@@ -1,9 +1,12 @@
 <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="{{ jogo.imagem }}" alt="Imagem de capa do card">
   <div class="card-body">
-    <h5 class="card-title">{{ jogo.nome }}</h5>
-    <p class="card-text">{{ jogo.descricao }}</p> 
-    
+    <div class="d-flex justify-content-between">
+      <h5 class="card-title">{{ jogo.nome }}</h5>
+      <fa-icon class="favoritar" (click)="favoritarJogo()" [class.estaFavoritado]="jogo.esta_favoritado" [icon]="faHeart"></fa-icon>
+    </div>
+    <p class="card-text">{{ jogo.descricao }}</p>
+
     <a href="#" class="btn btn-primary">Comprar</a>
   </div>
 </div>
