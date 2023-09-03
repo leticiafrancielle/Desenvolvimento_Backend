@@ -33,4 +33,15 @@ public class JogoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(jogoRetornado);
     }
 
+    @PutMapping("/favoritar/{id}")
+    public ResponseEntity<Jogo> favoritar(@PathVariable int id){
+        Jogo jogo = jogoService.favoritar(id);
+        return ResponseEntity.status(HttpStatus.OK).body(jogo);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity excluir(@PathVariable int id){
+        jogoService.excluir(id);
+        return ResponseEntity.noContent().build();
+    }
 }

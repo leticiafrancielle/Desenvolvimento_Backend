@@ -1,12 +1,17 @@
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="{{ jogo.imagem }}" alt="Imagem de capa do card">
-  <div class="card-body">
-    <div class="d-flex justify-content-between">
-      <h5 class="card-title">{{ jogo.nome }}</h5>
-      <fa-icon class="favoritar" (click)="favoritarJogo()" [class.estaFavoritado]="jogo.esta_favoritado" [icon]="faHeart"></fa-icon>
+<div class="container" (mouseenter)="mouseOver = true" (mouseleave)="mouseOver = false">
+  
+  <fa-icon (click)="onClickBotaoExcluir()" class="x-circle" [icon]="faCircleXmark" *ngIf="mouseOver"  data-toggle="modal" data-target="#exampleModal"></fa-icon>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{ jogo.imagem }}" alt="Imagem de capa do card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <h5 class="card-title">{{ jogo.nome }}</h5>
+        <fa-icon class="favoritar" (click)="favoritarJogo()" [class.estaFavoritado]="jogo.esta_favoritado" [icon]="faHeart"></fa-icon>
+      </div>
+      <p class="card-text">{{ jogo.descricao }}</p>
+  
+      <a href="#" class="btn btn-success">${{jogo.preco}}</a>
+      <a href="#" class="btn btn-primary">Comprar</a>
     </div>
-    <p class="card-text">{{ jogo.descricao }}</p>
-
-    <a href="#" class="btn btn-primary">Comprar</a>
   </div>
 </div>
